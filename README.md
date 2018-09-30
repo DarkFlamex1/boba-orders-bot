@@ -7,4 +7,5 @@
 ## Extra challenge
 If one flavor of boba is very popular, we can assume many will order the same flavor of boba with the same parameters as others, so find a way to compact the size of the file
 i.e: If 50 people request a jasmine milk tea with 30% sweetness, save space by doing something other than listing 50 lines of the same order# boba-orders-bot
-# boba-orders-bot
+## Install Requirements
+boba-orders-bot works with python 3.6.3
