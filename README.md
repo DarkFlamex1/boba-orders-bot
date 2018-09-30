@@ -1,5 +1,5 @@
 # Boba-orders-bot
-(blank) is a discord bot that gives users a list of boba drinks to choose from, as well as some other parameters (sweetness, size, etc.)
+boba-orders-bot is a discord bot that gives users a list of boba drinks to choose from, as well as some other parameters (sweetness, size, etc.)
 ## Requirements
 1. There must be a command so that users may see what flavors of boba they  can order
 1. Users must be able to send the bot a request for a specific boba flavor with specific parameters (you may have your own syntax for taking this input in, i.e: engineer man's felix bot with polls)
