@@ -9,3 +9,5 @@ If one flavor of boba is very popular, we can assume many will order the same fl
 i.e: If 50 people request a jasmine milk tea with 30% sweetness, save space by doing something other than listing 50 lines of the same order# boba-orders-bot
 ## Install Requirements
 boba-orders-bot works with python 3.6.3
+
+Image from http://anothersunday.me/blog/2015/8/29/vegan-bubble-almond-milk-tea
