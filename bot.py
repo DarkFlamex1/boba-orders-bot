@@ -32,7 +32,6 @@ async def on_message(message):
     if message.author == client.user:
         return
     
-    
     cmd = message.content
     if cmd.startswith('!commands'):
         print('!hello, !cookie, !')
