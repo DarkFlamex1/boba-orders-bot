@@ -56,6 +56,7 @@ async def on_message(message):
     elif cmd[0:6] == '!order':
         print('order called')
         # get name of boba by removing '!order'
+        await message.channel.send(cmd[8:])
         cmd = cmd[8:]
         if cmd in BOBA_LIST:
             await message.channel.send('Your order for ' + cmd[7:i] + 'has been placed')
