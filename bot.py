@@ -5,8 +5,9 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 import json
 
-orders = ['jasmine', 'moom']
+orders = []
 BOBA_LIST = json.loads(open('boba_list.json').read())
+config = json.load(open("../config.json", "r"))
 
 Client = discord.Client()
 client = commands.Bot(command_prefix = '!')
@@ -60,10 +61,10 @@ async def on_message(message):
         cmd = cmd[7:]
         if cmd.lower() in BOBA_LIST:
             await message.channel.send('Your order for ' + cmd + ' has been placed')
-            orders[0] = cmd
+            orders.append(cmd)
             print("boba ordered")
         else:
             await message.channel.send('Your order for ' + cmd + ' has failed to be placed')
 
 # run the bot
-client.run('token')
+client.run(config["bot_key"])
