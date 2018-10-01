@@ -5,12 +5,11 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 import json
 
-Client = discord.Client()
-client = commands.Bot(command_prefix = '!')
-
+orders = ['jasmine', 'moom']
 BOBA_LIST = json.loads(open('boba_list.json').read())
 
-orders = []
+Client = discord.Client()
+client = commands.Bot(command_prefix = '!')
 
 @client.event
 async def on_ready():
@@ -34,7 +33,7 @@ async def on_message(message):
     
     cmd = message.content
     if cmd.startswith('!commands'):
-        print('!hello, !cookie, !')
+        print('!hello, !cookie, !cookies, and !order')
     
     elif cmd.startswith('!hello'):
         msg = 'Hello {0.author.mention}'.format(message)
@@ -52,14 +51,19 @@ async def on_message(message):
     elif cmd == '!clear list':
         orders = []
     
+    elif cmd == '!print list':
+        await message.channel.send(orders)
+    
     elif cmd[0:6] == '!order':
         print('order called')
         # get name of boba by removing '!order'
-        await message.channel.send(cmd[8:])
-        cmd = cmd[8:]
-        if cmd in BOBA_LIST:
-            await message.channel.send('Your order for ' + cmd[7:i] + 'has been placed')
+        cmd = cmd[7:]
+        if cmd.lower() in BOBA_LIST:
+            await message.channel.send('Your order for ' + cmd + ' has been placed')
+            orders[0] = cmd
             print("boba ordered")
+        else:
+            await message.channel.send('Your order for ' + cmd + ' has failed to be placed')
 
 # run the bot
 client.run('token')
