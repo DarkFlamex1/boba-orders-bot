@@ -7,7 +7,7 @@ import json
 
 orders = []
 BOBA_LIST = json.loads(open('boba_list.json').read())
-config = json.load(open("../config.json", "r"))
+config = json.load(open("./token.json", "r"))
 
 Client = discord.Client()
 client = commands.Bot(command_prefix = '!')
@@ -67,4 +67,7 @@ async def on_message(message):
             await message.channel.send('Your order for ' + cmd + ' has failed to be placed')
 
 # run the bot
-client.run(config["bot_key"])
+try:
+    client.run(config["token"])
+except Exception as e:
+    print('Token is invalid! Add your bot token to config.json.')
