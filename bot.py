@@ -60,6 +60,15 @@ async def ls(ctx):
     await ctx.send(orders)
 
 @bot.command()
+async def options(ctx):
+    '''
+    List the boba options
+    '''
+
+    #Clean up the string(One per line)
+    await ctx.send("```" +"\n".join(BOBA_LIST) + "```")
+
+@bot.command()
 async def cookie(ctx):
     '''
     FREE COOKIE!!!
