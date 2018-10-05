@@ -12,6 +12,11 @@ boba-orders-bot is a discord bot that gives users a list of boba drinks to choos
 boba-orders-bot works with the [discord.py](https://github.com/Rapptz/discord.py/tree/rewrite) module. 
 
 **IMPORTANT:** You must install the `discord.py` rewrite! 
+
+To install the rewrite version in one step:
+`python3 -m pip install -U https://github.com/Rapptz/discord.py/archive/rewrite.zip#egg=discord.py[voice]`
+
+Or the long way around:
 1. `git clone https://github.com/Rapptz/discord.py/`
 2. `cd discord.py`
 3. `git checkout rewrite`
